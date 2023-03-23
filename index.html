@@ -227,27 +227,29 @@
 
 			document.getElementById("requestwhitelist").onclick = function() {
 								document.getElementById("chooserequest").style.opacity = "0";
-				setTimeout(function() {
-					document.getElementById("chooserequest").style.display = "none";
-					document.getElementById("requestform").style.display = "flex";
-					setTimeout(function() {
-						addRequestInfo("whitelist");
-						addRequestField("Namn(IRL)", "1");
-						addRequestField("Ålder(IRL)", "2");
-						addRequestField("Discord namn", "3");
-						addRequestField("Steam länk", "4");
-						addRequestField("Tidigare erfarenhet", "5");
-						addRequestField("Beskriv din karaktär", "6");
-						addRequestField("Varför skall just du bli whitelistad?", "7");
-						addRequestField("Ge exempel på vad som kan vara att gå över gränsen med rp", "8");
-						addRequestField("Övriga frågor eller kommentarer", "9");
+				<div class="container">
+  <form action="action_page.php">
 
-						document.getElementById("requestform").innerHTML += "<h3 style=\"margin-top: 25px; width: 80%; text-align: center;\">Av säkerhetsskäl kommer vi att spara din IP adress. Genom att klicka på \"Skicka in ansökan\" godkänner du detta.<h3><input type=\"submit\" name=\"submitrequest\" value=\"Skicka in ansökan\" style=\"background-color: #222; border: 1px solid #e0021c; text-align: center; cursor: pointer; padding: 10px; font-size: 20px; color: #000; transition: .5s ease; padding-left: 30px; padding-right: 30px; color: #f4f4f4; margin-top: 30px;\" onmouseenter=\"this.style.backgroundColor = '#e0021c'; this.style.color = '#222';\" onmouseleave=\"this.style.backgroundColor = '#222'; this.style.color = '#f4f4f4';\">";
-						setTimeout(function() {
-							document.getElementById("requestform").style.opacity = "1";
-						}, 1000);
-					}, 1);
-				}, 1000);
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
 							}
 
 			document.getElementById("requestcriminal").onclick = function() {
